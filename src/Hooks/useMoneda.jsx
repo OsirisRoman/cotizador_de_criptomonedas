@@ -1,14 +1,19 @@
 import React, { Fragment, useState } from 'react';
 
-const useMoneda = () => {
+const useMoneda = (label, stateInicial, opciones) => {
   //Estado de nuestro Hook
-  const [state, setState] = useState('');
+  const [state, setState] = useState(stateInicial);
 
   const Seleccionar = () => (
     <Fragment>
-      <label>Moneda</label>
+      <label>{label}</label>
       <select>
-        <option value='MXN'>Peso Mexicano</option>
+        <option value=''>- Seleccione -</option>
+        {opciones.map((opcion) => (
+          <option key={opcion.codigo} value={opcion.codigo}>
+            {opcion.nombre}
+          </option>
+        ))}
       </select>
     </Fragment>
   );
