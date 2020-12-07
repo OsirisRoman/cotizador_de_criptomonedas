@@ -1,7 +1,8 @@
 import React from 'react';
 import { Boton } from './Formulario.styles';
 
-import useMoneda from '../../Hooks/useMoneda';
+import useMoneda from '../../Hooks/Moneda/useMoneda';
+import useCriptomoneda from '../../Hooks/Criptomoneda/useCriptomoneda';
 
 const Formulario = () => {
   const MONEDAS = [
@@ -17,10 +18,16 @@ const Formulario = () => {
     '',
     MONEDAS
   );
+  const [
+    criptomoneda,
+    SeleccionDeCriptomoneda,
+    setCriptomoneda,
+  ] = useCriptomoneda('Elige tu Criptomoneda', '', MONEDAS);
 
   return (
     <form>
       <SeleccionDeMonedas />
+      <SeleccionDeCriptomoneda />
       <Boton type='submit' value='Calcular' />
     </form>
   );
