@@ -8,6 +8,7 @@ import useMoneda from '../../Hooks/Moneda/useMoneda';
 import useCriptomoneda from '../../Hooks/Criptomoneda/useCriptomoneda';
 
 const Formulario = () => {
+  const [listaCriptomonedas, setlistaCriptomonedas] = useState([]);
   const MONEDAS = [
     { codigo: 'USD', nombre: 'Dolar de Estados Unidos' },
     { codigo: 'EUR', nombre: 'Euro' },
@@ -25,7 +26,7 @@ const Formulario = () => {
     criptomoneda,
     SeleccionDeCriptomoneda,
     setCriptomoneda,
-  ] = useCriptomoneda('Elige tu Criptomoneda', '', []);
+  ] = useCriptomoneda('Elige tu Criptomoneda', '', listaCriptomonedas);
 
   useEffect(() => {
     const consultarAPI = async () => {
@@ -33,7 +34,7 @@ const Formulario = () => {
         'https://min-api.cryptocompare.com/data/top/mktcapfull?limit=10&tsym=USD';
       const resultado = await axios.get(url);
 
-      console.log(resultado.data.Data);
+      setlistaCriptomonedas(resultado.data.Data);
     };
     consultarAPI();
   }, []);
