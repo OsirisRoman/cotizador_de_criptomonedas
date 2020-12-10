@@ -9,7 +9,7 @@ import { Boton } from './Formulario.styles';
 import useMoneda from '../../Hooks/Moneda/useMoneda';
 import useCriptomoneda from '../../Hooks/Criptomoneda/useCriptomoneda';
 
-const Formulario = () => {
+const Formulario = ({ setMonedaSeleccionada, setCriptomonedaSeleccionada }) => {
   const [listaCriptomonedas, setlistaCriptomonedas] = useState([]);
   const [error, setError] = useState(false);
 
@@ -53,6 +53,8 @@ const Formulario = () => {
     }
 
     setError(false);
+    setMonedaSeleccionada(moneda);
+    setCriptomonedaSeleccionada(criptomoneda);
   };
 
   return (
