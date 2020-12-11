@@ -8,6 +8,7 @@ import imagen from './cryptomonedas.png';
 
 import Formulario from './Componentes/Formulario/Formulario';
 import Cotizacion from './Componentes/Cotizacion/Cotizacion';
+import Spinner from './Componentes/Spinner/Spinner';
 
 function App() {
   //Estado de la moneda
@@ -18,7 +19,10 @@ function App() {
   //Estado de la cotización
   const [resultado, setResultado] = useState({});
 
-  //
+  //Estado para mostrar el spinner
+  const [cargando, setCargando] = useState(false);
+
+  //Hook que realiza la consulta cuando cambian los valores de la moneda y criptomoneda seleccionada
   useEffect(() => {
     const cotizarCriptomoneda = async () => {
       if (monedaSeleccionada === '' || criptomonedaSeleccionada === '') {
@@ -46,8 +50,9 @@ function App() {
         <Formulario
           setMonedaSeleccionada={setMonedaSeleccionada}
           setCriptomonedaSeleccionada={setCriptomonedaSeleccionada}
+          setCargando={setCargando}
         />
-        <Cotizacion resultado={resultado} />
+        {!cargando ? <Cotizacion resultado={resultado} /> : <Spinner />}
       </div>
     </Contenedor>
   );

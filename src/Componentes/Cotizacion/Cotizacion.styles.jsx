@@ -7,6 +7,7 @@ export const ResultadoDiv = styled.div`
 
 export const Parrafo = styled.div`
   font-size: 18px;
+  margin-top: 5px;
 
   span {
     font-weight: bold;
@@ -15,6 +16,7 @@ export const Parrafo = styled.div`
 
 export const Precio = styled.div`
   font-size: 30px;
+  margin: 15px auto;
 
   span {
     font-weight: bold;

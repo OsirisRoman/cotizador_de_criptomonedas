@@ -19,8 +19,8 @@ export const Header = styled.h1`
   font-family: 'Bebas Neue', cursive;
   color: #fff;
   text-align: left;
-  font-weight: 700;
-  font-size: 50px;
+  font-weight: 300;
+  font-size: 40px;
   margin-bottom: 50px;
   margin-top: 80px;
 
