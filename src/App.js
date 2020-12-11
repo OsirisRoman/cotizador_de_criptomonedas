@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 import axios from 'axios';
 
-import { Contenedor, Imagen, Header } from './App.styles';
+import { Contenedor, Imagen, Header, Descripcion } from './App.styles';
 
 import imagen from './cryptomonedas.png';
 
@@ -58,6 +58,11 @@ function App() {
       </div>
       <div>
         <Header>Cotiza criptomonedas al instante</Header>
+        <Descripcion>
+          Una app que permite cotizar el valor de las principales criptomonedas
+          en función de las principales divisas internacionales usando una API
+          externa 🎉.
+        </Descripcion>
         <Formulario
           setMonedaSeleccionada={setMonedaSeleccionada}
           setCriptomonedaSeleccionada={setCriptomonedaSeleccionada}

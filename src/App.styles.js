@@ -21,7 +21,7 @@ export const Header = styled.h1`
   text-align: left;
   font-weight: 300;
   font-size: 40px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   margin-top: 80px;
 
   &::after {
@@ -31,4 +31,11 @@ export const Header = styled.h1`
     background-color: #66a2fe;
     display: block;
   }
+`;
+
+export const Descripcion = styled.h4`
+  color: white;
+  text-align: center;
+  font-weight: normal;
+  font-family: Arial, Helvetica, sans-serif;
 `;
