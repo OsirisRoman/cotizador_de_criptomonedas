@@ -21,7 +21,7 @@ const useMoneda = (label, stateInicial, opciones) => {
   );
 
   //Retornar state, interfaz y función que modifica el state
-  return [state, Seleccionar, setState];
+  return [state, Seleccionar];
 };
 
 export default useMoneda;

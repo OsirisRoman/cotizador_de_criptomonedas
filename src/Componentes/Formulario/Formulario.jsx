@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
 import axios from 'axios';
 
@@ -25,16 +26,16 @@ const Formulario = ({
   ];
 
   //Utilizamos nuestro custom Hook useMoneda
-  const [moneda, SeleccionDeMonedas, setMoneda] = useMoneda(
+  const [moneda, SeleccionDeMonedas] = useMoneda(
     'Elige tu moneda',
     '',
     MONEDAS
   );
-  const [
-    criptomoneda,
-    SeleccionDeCriptomoneda,
-    setCriptomoneda,
-  ] = useCriptomoneda('Elige tu Criptomoneda', '', listaCriptomonedas);
+  const [criptomoneda, SeleccionDeCriptomoneda] = useCriptomoneda(
+    'Elige tu Criptomoneda',
+    '',
+    listaCriptomonedas
+  );
 
   useEffect(() => {
     const consultarAPI = async () => {
@@ -77,6 +78,12 @@ const Formulario = ({
       <Boton type='submit' value='Calcular' />
     </form>
   );
+};
+
+Formulario.propTypes = {
+  setMonedaSeleccionada: PropTypes.func.isRequired,
+  setCriptomonedaSeleccionada: PropTypes.func.isRequired,
+  setCargando: PropTypes.func.isRequired,
 };
 
 export default Formulario;

@@ -20,7 +20,7 @@ const useCriptomoneda = (label, stateInicial, opciones) => {
     </Fragment>
   );
 
-  return [state, SeleccionarCriptomoneda, setState];
+  return [state, SeleccionarCriptomoneda];
 };
 
 export default useCriptomoneda;

@@ -40,6 +40,17 @@ function App() {
     cotizarCriptomoneda();
   }, [monedaSeleccionada, criptomonedaSeleccionada]);
 
+  //Hook para mover la pantalla y que se pueda ver el resultado de la cotización
+  useEffect(() => {
+    let espera = 0;
+    if (!cargando) {
+      espera = 275;
+    }
+    setTimeout(() => {
+      window.scrollBy(0, window.outerHeight);
+    }, espera);
+  }, [cargando]);
+
   return (
     <Contenedor>
       <div>
